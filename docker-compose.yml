@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  redis:
+    image: redis/redis-stack
+    volumes:
+      - redis:/data
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+      - "${REDIS_UI_PORT:-8001}:8001"
+
+volumes:
+  redis:
